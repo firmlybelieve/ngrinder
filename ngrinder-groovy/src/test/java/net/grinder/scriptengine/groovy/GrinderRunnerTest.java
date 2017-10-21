@@ -67,7 +67,7 @@ public class GrinderRunnerTest {
 	}
 
 	@RunWith(GrinderRunner.class)
-	@Repeat(100)
+	@Repeat(3)
 	public static class TestSample {
 		private static HTTPRequest request = null;
 		private static GTest test = new GTest(1, "Hello");
@@ -86,7 +86,7 @@ public class GrinderRunnerTest {
 			grinder.getStatistics().setDelayReports(true);
 		}
 
-		@RunRate(50)
+		@RunRate(2)
 		@Test
 		public void doTest() throws Exception {
 			HTTPResponse result = request.GET("http://www.naver.com");
@@ -98,7 +98,7 @@ public class GrinderRunnerTest {
 		}
 
 		@Test
-		@RunRate(10)
+		@RunRate(1)
 		public void doTest2() throws Exception {
 			grinder.getStatistics().setDelayReports(true);
 			HTTPResponse result = request.GET("http://www.google.co.kr");
